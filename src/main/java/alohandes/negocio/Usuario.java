@@ -80,8 +80,7 @@ public class Usuario {
 	 * @param alohandesId
 	 * @param universidadId
 	 */
-	public Usuario(int edad, String email, String nombre, long numeroCel, String numeroId, long usuarioId,
-			long alohandesId, long universidadId) {
+	public Usuario(int edad, String email, String nombre, long numeroCel, String numeroId, long usuarioId,long alohandesId, long universidadId) {
 		
 		this.edad = edad;
 		this.email = email;

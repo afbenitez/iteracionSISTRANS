@@ -65,17 +65,17 @@ public class SQLCliente {
         return (long) q.executeUnique();
 	}
 	
-	public long eliminarClientePorId (PersistenceManager pm, long id)
+	public long eliminarClientePorId (PersistenceManager pm, long id, long idReserva)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente() + " WHERE CLIENTEID = ?");
-        q.setParameters(id);
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente() + " WHERE CLIENTEID = ? AND RESERVAID = ? ");
+        q.setParameters(id,idReserva);
         return (long) q.executeUnique();
 	}
-	public Cliente darClientePorId (PersistenceManager pm, long id) 
+	public Cliente darClientePorId (PersistenceManager pm, long id, long idreserva) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCliente()+ " WHERE CLIENTEID = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCliente()+ "  WHERE CLIENTEID = ? AND RESERVAID = ?");
 		q.setResultClass(Cliente.class);
-		q.setParameters(id);
+		q.setParameters(id,idreserva);
 		return (Cliente) q.executeUnique();
 	}
 

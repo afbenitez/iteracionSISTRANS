@@ -46,7 +46,7 @@ public class OperadorServicio {
 	 * @param operadorId
 	 */
 	public OperadorServicio(long servicioId, long operadorId) {
-		super();
+	
 		this.servicioId = servicioId;
 		this.operadorId = operadorId;
 	}

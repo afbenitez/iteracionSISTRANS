@@ -67,9 +67,9 @@ public class SQLAgenda {
 	 * @param sedes - El número de sedes del bar
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarAgenda (PersistenceManager pm, Date fechaFin,Date fechaInicio, long agendaId, long reservaId, long viviendaId, long hostalId, long hotelId,long habitacionId ) 
+	public long adicionarAgenda (PersistenceManager pm, Date fechaFin,Date fechaInicio, long agendaId, long reservaId, long viviendaId, long hostalId, long hotelId,long habitacionId , long apartamentpId) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaAgenda()  + "(fechaFin,fechaInicio,  agendaId,  reservaId,  viviendaId,  hostalId,  hotelId, habitacionId) values (?, ?, ?, ?, ?,?,?,?,?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaAgenda()  + "(fechaFin,fechaInicio,  agendaId,  reservaId,  viviendaId,  hostalId,  hotelId, habitacionId,apartamentpId) values (?, ?, ?, ?, ?,?,?,?,?)");
         q.setParameters(fechaFin, fechaInicio,  agendaId,  reservaId,  viviendaId,  hostalId,  hotelId, habitacionId);
         return (long) q.executeUnique();
 	}
